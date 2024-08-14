@@ -27,7 +27,7 @@ const UsersState = {
 
 const io = new Server(expressServer, {
     cors: {
-        origin: process.env.NODE_ENV === "production" ? false : ["http://192.168.1.235:5500"]
+        origin: process.env.NODE_ENV === "production" ? false : ["https://talk-with-me-virid.vercel.app/"]
     }
 })
 
