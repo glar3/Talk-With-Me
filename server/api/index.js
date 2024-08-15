@@ -40,6 +40,13 @@ io.on('connection', socket => {
     socket.emit('message', buildMsg(ADMIN, "Welcome to the opposite of a Red Room"))
     socket.emit('message', buildMsg(ADMIN, "Enjoy your stay!"))
 
+    // Listen for a request to send the room list on initial connection
+    socket.on('requestRoomList', () => {
+        io.emit('roomList', {
+            rooms: getAllActiveRooms()
+        })
+    })
+
     socket.on('enterRoom', ({ name, room }) => {
 
         // leave previous room 
@@ -115,6 +122,9 @@ io.on('connection', socket => {
         }
     })
 })
+
+
+
 
 function buildMsg(name, text) {
     return {
