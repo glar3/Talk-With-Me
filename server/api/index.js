@@ -25,13 +25,22 @@ const UsersState = {
     }
 }
 
+// const io = new Server(expressServer, {
+//     cors: {
+//         origin: ["https://st10443220.github.io/talkwithmechatapp/"], // Allow this origin
+//         methods: ["GET", "POST"], // Allow specific HTTP methods
+//         credentials: true // If you need to send cookies or authorization headers
+//     }
+// });
+
 const io = new Server(expressServer, {
     cors: {
-        origin: ["https://st10443220.github.io/talkwithmechatapp/"], // Allow this origin
-        methods: ["GET", "POST"], // Allow specific HTTP methods
-        credentials: true // If you need to send cookies or authorization headers
+        origin: "*", // Allow all origins temporarily for testing
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
+
 
 
 io.on('connection', socket => {
