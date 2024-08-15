@@ -27,7 +27,7 @@ const UsersState = {
 
 const io = new Server(expressServer, {
     cors: {
-        origin: process.env.NODE_ENV === "production" ? false : ["https://talkwithmechatapp.vercel.app/"]
+        origin: process.env.NODE_ENV === "production" ? false : ["https://st10443220.github.io/talkwithmechatapp/"]
     }
 })
 
