@@ -27,9 +27,12 @@ const UsersState = {
 
 const io = new Server(expressServer, {
     cors: {
-        origin: process.env.NODE_ENV === "production" ? false : ["https://st10443220.github.io/talkwithmechatapp/"]
+        origin: ["https://st10443220.github.io/talkwithmechatapp/"], // Allow this origin
+        methods: ["GET", "POST"], // Allow specific HTTP methods
+        credentials: true // If you need to send cookies or authorization headers
     }
-})
+});
+
 
 io.on('connection', socket => {
     console.log(`User ${socket.id} connected`)
