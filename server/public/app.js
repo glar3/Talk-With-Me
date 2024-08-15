@@ -1,4 +1,4 @@
-const socket = io('https://talk-with-me-virid.vercel.app/')
+const socket = io('http://localhost:3500')
 
 const msgInput = document.querySelector('#message')
 const nameInput = document.querySelector('#name')
